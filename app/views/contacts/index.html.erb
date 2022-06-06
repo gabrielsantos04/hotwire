@@ -1,0 +1,28 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Contacts</h1>
+
+<div id="contacts">
+  <%= turbo_frame_tag 'contacts' do %>
+    <%= link_to "New contact", new_contact_path, data: {turbo_frame: '_top'} %>
+  <% end %>
+</div>
+
+<div class="contacts_list">
+    <table>
+      <thead>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Actions</th>
+      </thead>
+      <tbody>
+        <% @contacts.each do |contact| %>
+          <%= turbo_frame_tag "contact_#{contact.id}" do %>
+            <%= render contact %>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+</div>
+
+
