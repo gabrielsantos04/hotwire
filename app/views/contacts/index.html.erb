@@ -1,24 +1,47 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Contacts</h1>
+<div class="row">
 
-<div id="contacts">
-  <%= turbo_frame_tag 'contacts' do %>
-    <%= link_to "New contact", new_contact_path, data: {turbo_frame: 'new_contact'} %>
-  <% end %>
+  <!-- Area Chart -->
+  <div class="col-xl-8 col-lg-7">
+    <div class="card shadow mb-4">
+      <!-- Card Header - Dropdown -->
+      <div
+        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+        <h6 class="m-0 font-weight-bold text-primary">List</h6>
+        <div class="dropdown no-arrow">
+          <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+               aria-labelledby="dropdownMenuLink">
+            <div class="dropdown-header">Actions</div>
+            <%= turbo_frame_tag 'contacts' do %>
+              <%= link_to "New contact", new_contact_path, data: {turbo_frame: 'new_contact'}, class: 'dropdown-item' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <!-- Card Body -->
+      <div class="card-body">
+        <div class="new_contact">
+          <%= turbo_frame_tag 'new_contact' do %>
+          <% end %>
+        </div>
+        <div class="contacts_list">
+          <div class="row">
+            <div class="col-md-4"><strong>Name</strong></div>
+            <div class="col-md-4"><strong>Phone</strong></div>
+            <div class="col-md-4"><strong>Actions</strong></div>
+          </div>
+          <%= turbo_frame_tag 'contacts_list' do %>
+            <% @contacts.each do |contact| %>
+              <%= render contact %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-<div class="new_contact">
-  <%= turbo_frame_tag 'new_contact' do %>
-  <% end %>
-</div>
-
-<div class="contacts_list">
-  <%= turbo_frame_tag 'contacts_list' do %>
-    <% @contacts.each do |contact| %>
-      <%= render contact %>
-    <% end %>
-  <% end %>
-</div>
-
-

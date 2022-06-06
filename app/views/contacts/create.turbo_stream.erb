@@ -1,2 +1,2 @@
 <%= turbo_stream.append 'contacts_list', partial: 'contacts/contact', locals: { contact: @contact } %>
-<%= turbo_stream.remove 'new_contact' %>
+<%= turbo_stream.update 'new_contact' %>

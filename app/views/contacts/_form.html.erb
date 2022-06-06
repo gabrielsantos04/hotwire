@@ -10,18 +10,17 @@
       </ul>
     </div>
   <% end %>
+  <div class="row">
+    <div class="col-md-4">
+      <%= form.text_field :name, placeholder: 'Name' %>
+    </div>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
+    <div class="col-md-4">
+      <%= form.text_field :phone, placeholder: 'Phone' %>
+    </div>
 
-  <div>
-    <%= form.label :phone, style: "display: block" %>
-    <%= form.text_field :phone %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+    <div class="col-md-4">
+      <%= form.submit %>
+    </div>
   </div>
 <% end %>
