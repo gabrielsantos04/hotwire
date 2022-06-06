@@ -1,12 +1,14 @@
-<tr id="<%= dom_id contact %>">
-  <td>
-    <%= contact.name %>
-  </td>
-  <td>
-    <%= contact.phone %>
-  </td>
-  <td>
-    <%= button_to "Delete", contact_path(contact), method: :delete, class: "btn btn--light" %>
-    <%= link_to "Edit", edit_contact_path(contact), class: "btn btn--light" %>
-  </td>
-</tr>
+<%= turbo_frame_tag contact do %>
+  <div id="<%= dom_id contact %>">
+    <p>
+      <%= contact.name %>
+    </p>
+    <p>
+      <%= contact.phone %>
+    </p>
+    <p>
+      <%= button_to "Delete", contact_path(contact), method: :delete, class: "btn btn--light" %>
+      <%= link_to "Edit", edit_contact_path(contact), class: "btn btn--light" %>
+    </p>
+  </div>
+<% end %>

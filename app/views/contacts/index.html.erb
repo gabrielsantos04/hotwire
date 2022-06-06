@@ -4,25 +4,21 @@
 
 <div id="contacts">
   <%= turbo_frame_tag 'contacts' do %>
-    <%= link_to "New contact", new_contact_path, data: {turbo_frame: '_top'} %>
+    <%= link_to "New contact", new_contact_path, data: {turbo_frame: 'new_contact'} %>
+  <% end %>
+</div>
+
+<div class="new_contact">
+  <%= turbo_frame_tag 'new_contact' do %>
   <% end %>
 </div>
 
 <div class="contacts_list">
-    <table>
-      <thead>
-      <th>Name</th>
-      <th>Phone</th>
-      <th>Actions</th>
-      </thead>
-      <tbody>
-        <% @contacts.each do |contact| %>
-          <%= turbo_frame_tag "contact_#{contact.id}" do %>
-            <%= render contact %>
-          <% end %>
-        <% end %>
-      </tbody>
-    </table>
+  <%= turbo_frame_tag 'contacts_list' do %>
+    <% @contacts.each do |contact| %>
+      <%= render contact %>
+    <% end %>
+  <% end %>
 </div>
 
 
