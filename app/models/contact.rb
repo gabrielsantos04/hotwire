@@ -7,4 +7,6 @@ class Contact < ApplicationRecord
     locals: { contact: self },
     target: "contacts_list"
   }
+
+  after_create_commit -> { broadcast_update_to 'contacts_list', html: Contact.count, target: "contacts_size" }
 end
