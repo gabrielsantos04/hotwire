@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
   before_action :set_contact, only: %i[ show edit update destroy ]
-
+  require 'faker'
   # GET /contacts or /contacts.json
   def index
     @contacts = Contact.all
@@ -17,6 +17,10 @@ class ContactsController < ApplicationController
 
   # GET /contacts/1/edit
   def edit
+  end
+
+  def broadcast
+    Contact.create(name: Faker::Name.name, phone: Faker::PhoneNumber.cell_phone)
   end
 
   # POST /contacts or /contacts.json
