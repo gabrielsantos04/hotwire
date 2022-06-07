@@ -1,24 +1,19 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Hotwire
 
-Things you may want to cover:
+This project it's a study about Hotwire with Rails 7
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
 
-* Database creation
+## Stack
 
-* Database initialization
+**Back-end:** Ruby 3.0.0, Rails 7.0.0, Hotwire, Redis
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## Demo
 
-* Deployment instructions
+https://railshotwire.herokuapp.com/
 
-* ...
+![Rails7hotwire-Google-Chrome-2022-06-07-09-11-18](https://user-images.githubusercontent.com/4681417/172376429-2e8569ef-4451-4aeb-9b1a-53f99c03247d.gif)
+
