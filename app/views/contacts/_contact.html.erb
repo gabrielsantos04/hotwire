@@ -6,8 +6,8 @@
     <div class="col-md-4">
       <%= contact.phone %>
     </div>
-    <div class="col-md-4">
-      <%= link_to "Delete", contact_path(contact), method: :delete, class: "btn" %>
+    <div class="col-md-4" style="display: flex;">
+      <%= button_to "Delete", contact_path(contact), method: :delete, class: "btn" %>
       <%= link_to "Edit", edit_contact_path(contact), class: "btn" %>
     </div>
   </div>
